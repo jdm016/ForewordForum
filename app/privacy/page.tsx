@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Body, Caption, Container } from "@/components/ui";
+import { Body, Container, Heading, Pilcrow, PilcrowDivider, Reveal, SectionLabel } from "@/components/ui";
 import { PageIntro } from "@/components/site/PageIntro";
 import { privacy } from "@/content/pages";
+import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Privacy policy",
@@ -9,23 +10,53 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 };
 
+/** Turns the contact email inside a paragraph into a link. */
+function WithEmailLink({ text }: { text: string }) {
+  const parts = text.split(site.email);
+  if (parts.length === 1) return <>{text}</>;
+  return (
+    <>
+      {parts.map((part, i) => (
+        <span key={i}>
+          {part}
+          {i < parts.length - 1 ? (
+            <a href={`mailto:${site.email}`} className="text-bindery underline underline-offset-4">
+              {site.email}
+            </a>
+          ) : null}
+        </span>
+      ))}
+    </>
+  );
+}
+
 export default function PrivacyPage() {
   return (
     <>
-      <PageIntro label={privacy.label} heading={privacy.heading} />
+      <PageIntro label={privacy.label} heading={privacy.heading} intro={privacy.intro} />
       <Container className="py-section md:py-section-lg">
-        <Caption className="mb-12">Last updated {privacy.updated}</Caption>
-        <div className="grid max-w-prose gap-12">
-          {privacy.sections.map((s) => (
-            <section key={s.heading}>
-              <h2 className="type-h3 mb-4">{s.heading}</h2>
-              <div className="grid gap-4">
+        <SectionLabel className="mb-12">Last updated {privacy.updated}</SectionLabel>
+        <div className="grid gap-16">
+          {privacy.sections.map((s, i) => (
+            <Reveal
+              key={s.heading}
+              as="section"
+              className={`grid gap-6 md:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] md:gap-16 ${i > 0 ? "border-t border-patina pt-12" : ""}`}
+            >
+              <Heading className="flex items-baseline gap-3">
+                <Pilcrow className="text-[0.8em]" />
+                {s.heading}
+              </Heading>
+              <div className="grid gap-6 md:pt-2">
                 {s.body.map((p) => (
-                  <Body key={p}>{p}</Body>
+                  <Body key={p}>
+                    <WithEmailLink text={p} />
+                  </Body>
                 ))}
               </div>
-            </section>
+            </Reveal>
           ))}
+          <PilcrowDivider />
         </div>
       </Container>
     </>

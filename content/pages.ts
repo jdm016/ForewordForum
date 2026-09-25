@@ -50,6 +50,7 @@ export const support = {
 export const privacy = {
   label: "Privacy",
   heading: "Privacy policy",
+  intro: "What we collect when you join the waitlist, and how we take care of it.",
   updated: "September 2026",
   sections: [
     {
