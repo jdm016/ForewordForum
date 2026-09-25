@@ -25,7 +25,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-patina bg-cream">
-      <Container className="flex h-20 items-center justify-between gap-6">
+      <Container className="flex h-20 items-center md:h-24 justify-between gap-6">
         <Link href="/" className="shrink-0" aria-label="Foreword Forum home">
           <Wordmark />
         </Link>

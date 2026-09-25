@@ -1,4 +1,4 @@
-import { ButtonLink, Container, SectionLabel, Subtitle, Swipe, Title } from "@/components/ui";
+import { ButtonLink, Container, Pilcrow, SectionLabel, Subtitle, Swipe, Title } from "@/components/ui";
 import { hero } from "@/content/home";
 
 export function Hero() {
@@ -26,9 +26,7 @@ export function Hero() {
         <ul className="flex flex-wrap gap-x-8 gap-y-3 border-t border-patina pt-6 lg:mt-24 lg:flex-col lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
           {hero.notes.map((note) => (
             <li key={note} className="type-caption flex items-baseline gap-2">
-              <span aria-hidden="true" className="font-display text-coral">
-                ¶
-              </span>
+              <Pilcrow className="text-[15px]" />
               {note}
             </li>
           ))}

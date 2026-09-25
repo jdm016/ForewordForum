@@ -9,7 +9,7 @@ export function SiteFooter() {
     <footer className="on-dark bg-bindery text-cream">
       <Container className="grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div>
-          <Wordmark tone="cream" />
+          <Wordmark tone="cream" className="!h-20" />
           <p className="mt-4 font-display text-subtitle italic">{site.tagline}</p>
         </div>
 

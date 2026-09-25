@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: site.title,
     description: site.description,
     locale: "en_US",
-    // TODO: replace /public/og-image.png (1200 x 630) with a final designed image.
+    // Social card built from the logo: /public/og-image.png (1200 x 630).
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Foreword Forum. Your story starts here." }],
   },
   twitter: {

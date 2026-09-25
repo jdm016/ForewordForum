@@ -49,20 +49,26 @@ A few things to know:
 
 Color and accessibility rules:
 
+- The pilcrow uses the shape from the logo and is navy by default.
 - Coral, patina and endpaper never carry text on cream.
 - Small colored labels use bindery green.
 - The primary button uses a navy label on coral (5.31:1). Cream on coral is 2.15:1 and fails WCAG AA.
 - Form errors use Red Pen Coral for the border and icon only. The message itself is set in ink.
 
-## Where to drop the real logo
+## Logo and pilcrow
 
-The header and footer use a placeholder wordmark in `components/site/Wordmark.tsx`, marked `TODO`.
+The logo was traced to vector from the approved artwork, which is kept at `brand-source/logo-original.png`. The files live in `public/brand/`:
 
-1. Add the final files to `public/brand/`:
-   - `wordmark.svg` (navy, for the header)
-   - `wordmark-cream.svg` (for the footer)
-2. In `Wordmark.tsx`, swap the placeholder `<svg>` for the `<img>` shown in the comment at the top of the file.
-3. Replace `public/icon.svg` (favicon) and `public/og-image.png` (the social sharing card, 1200 x 630).
+| File | Use |
+| --- | --- |
+| `logo.svg` | Navy logo for cream backgrounds (header) |
+| `logo-cream.svg` | Cream logo for the bindery green footer |
+| `pilcrow.svg` | The pilcrow from the logo on its own |
+
+- **Header and footer:** `components/site/Wordmark.tsx` places the logo.
+- **Pilcrow:** everywhere on the site it uses the same traced shape from the logo (`components/ui/Pilcrow.tsx`), in navy by default.
+- **Favicon and social card:** `public/icon.svg` and `public/og-image.png` (1200 x 630) are built from the same artwork.
+- **Official vector files:** if a designer supplies them, save them over the files in `public/brand/`.
 
 ## Connecting the waitlist form
 
@@ -95,8 +101,7 @@ Every page is prerendered to static HTML. The waitlist API route runs as a serve
 
 Search the code for `TODO` to find each one.
 
-- [ ] Final vector logo (`components/site/Wordmark.tsx`, `public/brand/`)
-- [ ] Favicon and social card image (`public/icon.svg`, `public/og-image.png`)
+- [ ] Optional: swap in designer-supplied vector logo files (`public/brand/`)
 - [ ] Real photography: slots are marked in the Hero and Co-Authors sections. Every image needs alt text.
 - [ ] Form provider (`FORM_ENDPOINT`)
 - [ ] Analytics: a commented slot is in `app/layout.tsx`. Update `/privacy` if you add one.
