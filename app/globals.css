@@ -15,6 +15,11 @@
     @apply bg-cream font-sans text-body text-ink antialiased md:text-body-lg;
   }
 
+  /* On dark surfaces (footer) the focus ring switches to cream to stay visible. */
+  .on-dark :focus-visible {
+    outline-color: theme("colors.cream");
+  }
+
   ::selection {
     @apply bg-endpaper text-navy;
   }

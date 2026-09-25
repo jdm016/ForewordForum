@@ -51,7 +51,7 @@ function Block({ label, title, children }: { label: string; title: string; child
 
 export default function StyleguidePage() {
   return (
-    <main id="main" className="py-16">
+    <div className="py-16">
       <Container>
         <SectionLabel className="mb-4">Design system</SectionLabel>
         <Title className="mb-6">
@@ -225,6 +225,6 @@ export default function StyleguidePage() {
           </Caption>
         </Block>
       </Container>
-    </main>
+    </div>
   );
 }
