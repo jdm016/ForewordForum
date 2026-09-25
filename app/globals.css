@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-cream text-ink;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    /* Keep anchored sections clear of the sticky header. */
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-cream font-sans text-body text-ink antialiased md:text-body-lg;
+  }
+
+  ::selection {
+    @apply bg-endpaper text-navy;
+  }
+
+  /* Visible focus for every interactive element: 2px bindery, 2px offset. */
+  :focus-visible {
+    outline: 2px solid theme("colors.bindery");
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Type roles. Mobile first, desktop sizes from md up. */
+  .type-title {
+    @apply font-display text-title font-bold text-navy md:text-title-lg;
+  }
+  .type-h1 {
+    @apply font-display text-h1 font-semibold text-navy md:text-h1-lg;
+  }
+  .type-h2 {
+    @apply font-display text-h2 font-semibold text-navy md:text-h2-lg;
+  }
+  .type-quote {
+    @apply font-display text-quote font-normal italic text-navy md:text-quote-lg;
+  }
+  .type-subtitle {
+    @apply font-display text-subtitle font-normal italic text-navy md:text-subtitle-lg;
+  }
+  .type-h3 {
+    @apply font-sans text-h3 font-semibold text-navy md:text-h3-lg;
+  }
+  .type-body {
+    @apply max-w-prose font-sans text-body font-normal text-ink md:text-body-lg;
+  }
+  .type-caption {
+    @apply font-sans text-caption font-normal text-ink md:text-caption-lg;
+  }
+  .type-label {
+    @apply font-sans text-label font-medium uppercase text-bindery md:text-label-lg;
+  }
+
+  /* Scroll reveal: fade and rise 16px, 400ms ease-out. Only hidden when JS
+     is running, so content is never lost without it. */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 400ms ease-out,
+      transform 400ms ease-out;
+  }
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Hero swipe draws in once, left to right. */
+  .swipe-draw {
+    clip-path: inset(0 100% 0 0);
+    animation: swipe-draw 700ms ease-out 250ms forwards;
+  }
+  @keyframes swipe-draw {
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .swipe-draw {
+      clip-path: none;
+      animation: none;
+    }
+  }
+}
