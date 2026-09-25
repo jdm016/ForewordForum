@@ -72,19 +72,29 @@ The logo was traced to vector from the approved artwork, which is kept at `brand
 
 ## Connecting the waitlist form
 
-The form posts to `app/api/waitlist/route.ts`. The route validates the submission, filters bots with a hidden honeypot field, and forwards the signup as JSON.
+The form posts to `app/api/waitlist/route.ts`. The route validates the submission and filters bots with a hidden honeypot field. It then sends the signup to every destination that is set up.
 
-Set these environment variables in your host (Vercel or Netlify project settings), or in `.env.local` for local testing:
+- **Formspree (or any form service):** keeps a record of each signup and emails you.
+- **MailerLite:** adds the person as a subscriber in the group for their role.
+
+A signup counts as saved if at least one destination accepts it. Problems are written to the Netlify function log. The visitor only sees an error if every destination fails.
+
+Set these environment variables in Netlify (Site configuration, then Environment variables), or in `.env.local` for local testing. Never commit keys to the repo.
 
 | Variable | Required | Purpose |
 | --- | --- | --- |
-| `FORM_ENDPOINT` | Yes, for production | Any URL that accepts a JSON POST: Formspree, Basin, a Zapier or Make webhook, or your email tool's API |
-| `FORM_ENDPOINT_TOKEN` | No | Sent as `Authorization: Bearer <token>` if your provider needs it |
+| `FORM_ENDPOINT` | Recommended | Any URL that accepts a JSON POST: Formspree, Basin, or a Zapier or Make webhook |
+| `FORM_ENDPOINT_TOKEN` | No | Sent as `Authorization: Bearer <token>` if your form service needs it |
+| `MAILERLITE_API_KEY` | Recommended | MailerLite API token (MailerLite: Integrations, then MailerLite API). Mark it as a secret in Netlify. |
 | `NEXT_PUBLIC_SITE_URL` | Recommended | Production URL for canonical links, the sitemap and social cards. Defaults to `https://forewordforum.com`. |
 
-Without `FORM_ENDPOINT`, submissions are only printed to the server log. Nothing is saved.
+With neither `FORM_ENDPOINT` nor `MAILERLITE_API_KEY` set, submissions are only printed to the server log. Nothing is saved.
 
-The JSON sent to your provider:
+**MailerLite groups:** create four groups named exactly like the "I am a..." options: Student, Parent or guardian, Educator, Supporter. Each signup is matched to its group by name. If a group is missing, the person is still subscribed, without a group, and the log notes which group to create. To rename an option, change it in `content/home.ts` and rename the MailerLite group to match.
+
+**Redeploy after changing variables:** Netlify only picks up new or changed environment variables on the next deploy (Deploys, then Trigger deploy).
+
+The JSON sent to the form endpoint:
 
 ```json
 { "name": "...", "email": "...", "role": "Student", "message": "...", "source": "forewordforum.com waitlist", "submittedAt": "2026-09-25T12:00:00.000Z" }
@@ -103,7 +113,7 @@ Search the code for `TODO` to find each one.
 
 - [ ] Optional: swap in designer-supplied vector logo files (`public/brand/`)
 - [ ] Real photography: slots are marked in the Hero and Co-Authors sections. Every image needs alt text.
-- [ ] Form provider (`FORM_ENDPOINT`)
+- [ ] Form provider (`FORM_ENDPOINT`) and MailerLite (`MAILERLITE_API_KEY`)
 - [ ] Analytics: a commented slot is in `app/layout.tsx`. Update `/privacy` if you add one.
 - [ ] Social links (`content/site.ts`)
 - [ ] Founder story and team (`content/pages.ts`, `about.story`)
