@@ -1,4 +1,5 @@
 import { CoAuthors } from "@/components/sections/CoAuthors";
+import { Founder } from "@/components/sections/Founder";
 import { Hero } from "@/components/sections/Hero";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Programs } from "@/components/sections/Programs";
@@ -12,6 +13,7 @@ export default function HomePage() {
     <>
       <Hero />
       <WhatWeDo />
+      <Founder />
       <Programs />
       <HowItWorks />
       <CoAuthors />

@@ -1,31 +1,8 @@
 /**
- * Copy for the standalone pages: /about, /support, /privacy.
- * Sections set to `null` are placeholders that stay hidden until filled in.
+ * Copy for the standalone pages: /support and /privacy.
  */
 
-import { coAuthors, whatWeDo } from "./home";
-
-export const about = {
-  label: "About",
-  heading: "About Foreword Forum",
-  intro: "College and career readiness for students ages 16 to 22, in Dallas and live online nationwide.",
-  sections: [
-    { heading: "What we do", body: [whatWeDo.body] },
-    { heading: "Our Co-Authors", body: [`${coAuthors.body} ${coAuthors.quote}`] },
-  ],
-  // The book metaphor that runs through the program.
-  glossary: {
-    heading: "How we talk about it",
-    items: [
-      { term: "Volume", detail: "A cohort of students. Every Volume is small enough that we know your name." },
-      { term: "Co-Author", detail: "Your near-peer mentor, who has walked the road recently and writes alongside you." },
-      { term: "Publishers' Circle", detail: "The people who fund the work and make each Volume possible." },
-    ],
-  },
-  // TODO: founder story, team bios and photography. Do not publish invented names or quotes.
-  // Example shape: { heading: "Who we are", body: ["..."] }
-  story: null as null | { heading: string; body: string[] },
-};
+// The About page lives in content/about.ts.
 
 export const support = {
   label: "Support us",

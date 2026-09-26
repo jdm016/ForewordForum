@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { founder } from "@/content/about";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -56,6 +57,12 @@ const jsonLd = {
   email: site.email,
   description: site.description,
   slogan: site.tagline,
+  founder: {
+    "@type": "Person",
+    name: founder.name,
+    jobTitle: founder.role,
+    alumniOf: { "@type": "CollegeOrUniversity", name: "Sam Houston State University" },
+  },
   areaServed: [
     { "@type": "City", name: "Dallas, Texas" },
     { "@type": "Country", name: "United States" },
