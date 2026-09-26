@@ -25,7 +25,11 @@ export function Founder() {
         <div className="md:pt-9">
           <p className="type-h3 mb-1">{founder.name}</p>
           <p className="type-label mb-6">{founder.role}</p>
-          <Body>{founderHome.body}</Body>
+          <div className="grid gap-4">
+            {founderHome.body.map((p) => (
+              <Body key={p}>{p}</Body>
+            ))}
+          </div>
           <FounderStats className="mt-10" />
           <Link
             href={founderHome.link.href}

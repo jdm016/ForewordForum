@@ -39,8 +39,11 @@ export const founder = {
 /** Home page section that introduces the founder and her record. */
 export const founderHome = {
   label: "Who runs it",
-  heading: "A method already run, with results that were measured.", // NEW, drawn from the About copy
-  body: "Jessica D. Maine founded Foreword Forum in Dallas after 14 years in and supporting public education: first as a classroom teacher, then in campus and district leadership, and as an educational consultant to Dallas ISD. At the center of that work was a college and career readiness program she led.",
+  heading: "Corporate leader turned educator.",
+  body: [
+    "Jessica D. Maine led in strategy and operations, then brought that experience into public education as a classroom teacher, a campus and district leader, and an educational consultant to Dallas ISD.",
+    "Foreword Forum brings both sides of that work together into the resource she saw young people needed: real access to the knowledge, guidance, and support that turn a plan into a next step.",
+  ],
   link: { label: "Read her story", href: "/about#who-runs-it" },
 };
 
