@@ -1,6 +1,6 @@
 /**
  * The About page and the founder proof points used on the home page.
- * Copy supplied by Jessica D. Maine. Edit the text between the quotes.
+ * Copy supplied by Jessica D. Maine-Jackson. Edit the text between the quotes.
  *
  * About page blocks, in order, inside each section:
  *   { type: "p", text }        a paragraph
@@ -10,12 +10,12 @@
  */
 
 export const founder = {
-  name: "Jessica D. Maine",
+  name: "Jessica D. Maine-Jackson",
   role: "Founder",
-  // TODO: add a professional headshot at /public/photos/jessica-maine.jpg and set this to
-  // "/photos/jessica-maine.jpg". It appears on the home page and the About page.
+  // TODO: add a professional headshot at /public/photos/jessica-maine-jackson.jpg and set this to
+  // "/photos/jessica-maine-jackson.jpg". It appears on the home page and the About page.
   photo: null as string | null,
-  photoAlt: "Jessica D. Maine, founder of Foreword Forum",
+  photoAlt: "Jessica D. Maine-Jackson, founder of Foreword Forum",
   stats: [
     { figure: "100%", label: "of participating students graduated and were accepted to college" },
     { figure: "81%", label: "were awarded scholarships" },
@@ -42,7 +42,7 @@ export const founderHome = {
   label: "Who runs it",
   heading: "Corporate leader turned educator.",
   body: [
-    "Jessica D. Maine began in corporate leadership, then moved into the classroom. Over 14 years in public education she grew into campus and district leadership and served as an educational consultant to Dallas ISD. From there she turned to entrepreneurship, for the chance to make a more significant impact.",
+    "Jessica D. Maine-Jackson began in corporate leadership, then moved into the classroom. Over 14 years in public education she grew into campus and district leadership and served as an educational consultant to Dallas ISD. From there she turned to entrepreneurship, for the chance to make a more significant impact.",
     "Foreword Forum brings all of that experience together into the resource she saw young people needed: real access to the knowledge, guidance, and support that turn a plan into a next step.",
   ],
   link: { label: "Read her story", href: "/about#who-runs-it" },
@@ -60,7 +60,7 @@ export const about = {
   label: "About",
   heading: "About Foreword Forum",
   description:
-    "Foreword Forum was founded in Dallas by Jessica D. Maine, a certified educator whose college and career readiness program saw 100% of students graduate and be accepted to college.",
+    "Foreword Forum was founded in Dallas by Jessica D. Maine-Jackson, a certified educator whose college and career readiness program saw 100% of students graduate and be accepted to college.",
   lead: [
     "Most students do not fail for lack of ambition. They stall because nobody sat down with them and walked through the steps: which deadline comes first, what the FAFSA actually asks, how to talk about yourself in an essay without sounding like someone else.",
   ],
