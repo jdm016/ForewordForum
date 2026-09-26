@@ -118,7 +118,7 @@ export const about = {
       id: "what-students-do",
       heading: "What students actually do",
       blocks: [
-        { type: "p", text: "Our first cohort, Volume I, opens soon." },
+        { type: "p", text: "Our first cohort, Volume I, begins October 15, 2026." },
         {
           type: "p",
           text: "Students work through First Draft, the college and career readiness track. It covers the college and job application process, essay writing and revision, financial aid and FAFSA, test preparation, and planning for what comes after graduation, whether that is a four-year school, a two-year school, a trade, or work.",

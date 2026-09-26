@@ -12,7 +12,8 @@ export function VolumeOne() {
               <Heading id="volume-title" className="mb-6">
                 {volumeOne.heading}
               </Heading>
-              <Body className="mb-8">{volumeOne.body}</Body>
+              <Body className="mb-4">{volumeOne.body}</Body>
+              <Body className="mb-8">{volumeOne.funding}</Body>
               <ButtonLink href={volumeOne.cta.href} variant="secondary">
                 {volumeOne.cta.label}
               </ButtonLink>

@@ -132,8 +132,8 @@ export default function StyleguidePage() {
             </Card>
             <Card tone="endpaper">
               <SectionLabel className="mb-3">Volume I</SectionLabel>
-              <Subheading className="mb-3">Launching fall 2026</Subheading>
-              <Body>Space is intentionally limited. Join the waitlist and we will reach out before enrollment opens.</Body>
+              <Subheading className="mb-3">Begins October 15, 2026</Subheading>
+              <Body>Space is intentionally limited. Join the waitlist and we will reach out with enrollment details.</Body>
             </Card>
           </div>
         </Block>

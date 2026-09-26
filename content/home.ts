@@ -7,7 +7,7 @@
  */
 
 export const hero = {
-  label: "Volume I opens fall 2026",
+  label: "Volume I begins October 15, 2026",
   // The word in `swipe` gets the coral highlighter.
   title: { before: "Your ", swipe: "story", after: " starts here." },
   subhead: "College and career readiness for students ages 16 to 22, in Dallas and live online nationwide.",
@@ -30,7 +30,7 @@ export const programs = {
       name: "First Draft",
       kind: "Core readiness track",
       icon: "notePencil",
-      body: "Our core readiness track. Applications, financial aid, essays, resumes, interviews, and the plan behind all of it.",
+      body: "Our core readiness track: college and job applications, essays, resumes, interviews, financial aid and FAFSA, and test prep, plus a plan for what comes after graduation, whether that is a four-year school, a two-year school, a trade, or work.",
     },
     {
       name: "Speak Volumes",
@@ -61,12 +61,14 @@ export const coAuthors = {
 
 export const volumeOne = {
   label: "Volume I",
-  heading: "Our first cohort launches in fall 2026.", // NEW
-  body: "Our first cohort launches in fall 2026, in Dallas and online. Space is intentionally limited. Join the waitlist and we will reach out before enrollment opens.",
+  heading: "Volume I begins October 15.",
+  body: "Our first cohort begins October 15, 2026, in Dallas and online. Space is intentionally limited. Join the waitlist and we will reach out with enrollment details.",
+  funding: "Seats are available through Foreword Forum Prep, and Foreword Forum Foundation funds scholarship seats as funding allows, so cost is not the reason a student sits this out.",
   facts: [
-    { term: "Launches", detail: "Fall 2026" },
+    { term: "Begins", detail: "October 15, 2026" },
     { term: "Where", detail: "Dallas and live online" },
     { term: "Size", detail: "Intentionally limited" },
+    { term: "Seats", detail: "Paid and scholarship" },
   ],
   cta: { label: "Join the waitlist", href: "#waitlist" },
 };
