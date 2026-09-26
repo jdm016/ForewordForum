@@ -8,11 +8,16 @@
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
     /* Keep anchored sections clear of the sticky header. */
-    scroll-padding-top: 6rem;
+    scroll-padding-top: 7rem;
   }
 
   body {
     @apply bg-cream font-sans text-body text-ink antialiased md:text-body-lg;
+  }
+
+  /* On dark surfaces (footer) the focus ring switches to cream to stay visible. */
+  .on-dark :focus-visible {
+    outline-color: theme("colors.cream");
   }
 
   ::selection {

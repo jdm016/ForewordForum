@@ -51,7 +51,7 @@ function Block({ label, title, children }: { label: string; title: string; child
 
 export default function StyleguidePage() {
   return (
-    <main id="main" className="py-16">
+    <div className="py-16">
       <Container>
         <SectionLabel className="mb-4">Design system</SectionLabel>
         <Title className="mb-6">
@@ -86,7 +86,7 @@ export default function StyleguidePage() {
               ["Header · Playfair 600 · 44/32", <Header key="h" as="p">Write your next chapter.</Header>],
               ["Heading · Playfair 600 · 36/28", <Heading key="h2" as="p">How it works</Heading>],
               ["Pull quote · Playfair italic · 30/24", <PullQuote key="q">They are not lecturing at you. They are writing alongside you.</PullQuote>],
-              ["Subtitle · Playfair italic · 24/20", <Subtitle key="s">College and career readiness for students ages 16 to 22.</Subtitle>],
+              ["Subtitle · Playfair italic · 24/20", <Subtitle key="s">College and career readiness for teens and young adults.</Subtitle>],
               ["Subheading · Inter 600 · 22/19", <Subheading key="h3" as="p">Meet your Co-Author</Subheading>],
               [
                 "Body · Inter 400 · 18/16 · 1.65",
@@ -132,8 +132,8 @@ export default function StyleguidePage() {
             </Card>
             <Card tone="endpaper">
               <SectionLabel className="mb-3">Volume I</SectionLabel>
-              <Subheading className="mb-3">Launching fall 2026</Subheading>
-              <Body>Space is intentionally limited. Join the waitlist and we will reach out before enrollment opens.</Body>
+              <Subheading className="mb-3">Begins October 15, 2026</Subheading>
+              <Body>Space is intentionally limited. Join the waitlist and we will reach out with enrollment details.</Body>
             </Card>
           </div>
         </Block>
@@ -225,6 +225,6 @@ export default function StyleguidePage() {
           </Caption>
         </Block>
       </Container>
-    </main>
+    </div>
   );
 }
