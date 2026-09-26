@@ -24,13 +24,14 @@ export const founder = {
   statsSource:
     "Across her years leading a college and career readiness program in a district ranked among the top 1% in the nation for readiness programming.",
   credentials: [
+    "Corporate leadership",
     "Certified educator",
     "B.A., Communication Studies, Sam Houston State University",
     "14 years in and supporting public education",
     "Campus and district leadership",
     "Educational consultant to Dallas ISD",
     "Led multiple campuses to accreditation for excellence",
-    "15+ years in strategy and operations consulting",
+    "Founder, strategy and operations consulting firm",
     "First Vice President, Dallas Chapter, Top Ladies of Distinction",
     "Mentor, iCouldBe",
   ],
@@ -41,8 +42,8 @@ export const founderHome = {
   label: "Who runs it",
   heading: "Corporate leader turned educator.",
   body: [
-    "Jessica D. Maine led in strategy and operations, then brought that experience into public education as a classroom teacher, a campus and district leader, and an educational consultant to Dallas ISD.",
-    "Foreword Forum brings both sides of that work together into the resource she saw young people needed: real access to the knowledge, guidance, and support that turn a plan into a next step.",
+    "Jessica D. Maine began in corporate leadership, then moved into the classroom. Over 14 years in public education she grew into campus and district leadership and served as an educational consultant to Dallas ISD. From there she turned to entrepreneurship, for the chance to make a more significant impact.",
+    "Foreword Forum brings all of that experience together into the resource she saw young people needed: real access to the knowledge, guidance, and support that turn a plan into a next step.",
   ],
   link: { label: "Read her story", href: "/about#who-runs-it" },
 };
@@ -75,7 +76,7 @@ export const about = {
         },
         {
           type: "p",
-          text: "She started as a classroom teacher and is a certified educator with a B.A. in Communication Studies from Sam Houston State University. Over 14 years in and supporting public education she moved into leadership at the campus level, then the district level, and served as an educational consultant to Dallas ISD, one of the largest school districts in the state.",
+          text: "She began in corporate leadership, then moved into the classroom as a teacher. She is a certified educator with a B.A. in Communication Studies from Sam Houston State University. Over 14 years in and supporting public education she moved into leadership at the campus level, then the district level, and served as an educational consultant to Dallas ISD, one of the largest school districts in the state.",
         },
         {
           type: "p",
@@ -88,7 +89,7 @@ export const about = {
         },
         {
           type: "p",
-          text: "For the past fifteen-plus years she has also worked in strategy and operations, running her own successful consulting firm serving founders, nonprofits, school districts, and coworking spaces across Dallas-Fort Worth. The short version: she builds the systems that make things actually happen, on schedule, with the people involved treated well.",
+          text: "From there she turned to entrepreneurship, for the chance to make a more significant impact. Across fifteen-plus years in strategy and operations, she has run her own successful consulting firm serving founders, nonprofits, school districts, and coworking spaces across Dallas-Fort Worth. The short version: she builds the systems that make things actually happen, on schedule, with the people involved treated well.",
         },
         {
           type: "p",
