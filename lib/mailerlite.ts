@@ -28,13 +28,22 @@ async function findGroupId(key: string, name: string): Promise<string | undefine
 
   const url = `${API}/groups?limit=100&filter[name]=${encodeURIComponent(name)}`;
   const res = await fetch(url, { headers: headers(key), signal: AbortSignal.timeout(8000) });
-  if (!res.ok) throw new Error(`MailerLite group lookup failed with ${res.status}`);
+  if (!res.ok) throw new Error(`MailerLite group lookup failed with ${res.status}: ${await errorText(res)}`);
 
   const body = (await res.json()) as { data?: { id: string; name: string }[] };
   // The API filter is a partial match, so pick the exact name.
   const group = body.data?.find((g) => g.name.trim().toLowerCase() === name.trim().toLowerCase());
   if (group) groupIds.set(name, group.id);
   return group?.id;
+}
+
+/** MailerLite's error message (for example "Unauthenticated."), trimmed for the log. Never includes the key. */
+async function errorText(res: Response): Promise<string> {
+  try {
+    return (await res.text()).slice(0, 300);
+  } catch {
+    return "(no details)";
+  }
 }
 
 export function mailerliteEnabled() {
@@ -45,10 +54,13 @@ export async function addToMailerLite(input: WaitlistInput): Promise<void> {
   const key = process.env.MAILERLITE_API_KEY;
   if (!key) return;
 
-  const groupId = await findGroupId(key, input.role);
-  if (!groupId) {
-    // Still subscribe them, so nobody is lost, and flag the missing group.
-    console.error(`[waitlist] MailerLite group "${input.role}" not found. Subscriber added without a group.`);
+  // A group problem never stops the subscription: add them anyway and log it.
+  let groupId: string | undefined;
+  try {
+    groupId = await findGroupId(key, input.role);
+    if (!groupId) console.error(`[waitlist] MailerLite group "${input.role}" not found. Subscriber added without a group.`);
+  } catch (err) {
+    console.error("[waitlist] Could not look up MailerLite group. Subscriber added without a group.", err);
   }
 
   // POST /subscribers creates the subscriber, or updates them if the email
@@ -63,5 +75,5 @@ export async function addToMailerLite(input: WaitlistInput): Promise<void> {
     }),
     signal: AbortSignal.timeout(8000),
   });
-  if (!res.ok) throw new Error(`MailerLite subscribe failed with ${res.status}`);
+  if (!res.ok) throw new Error(`MailerLite subscribe failed with ${res.status}: ${await errorText(res)}`);
 }

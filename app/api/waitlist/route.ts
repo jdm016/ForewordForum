@@ -21,7 +21,8 @@ export async function POST(request: Request) {
   }
 
   // Honeypot: bots fill hidden fields. Pretend success and drop it.
-  if (typeof body.company === "string" && body.company.trim() !== "") {
+  if (typeof body.ff_check === "string" && body.ff_check.trim() !== "") {
+    console.warn("[waitlist] Hidden anti-bot field was filled. Submission dropped.");
     return NextResponse.json({ ok: true });
   }
 

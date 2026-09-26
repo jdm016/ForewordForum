@@ -62,7 +62,7 @@ export function WaitlistForm() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...input, company: String(data.get("company") ?? "") }),
+        body: JSON.stringify({ ...input, ff_check: String(data.get("ff_check") ?? "") }),
       });
       if (res.status === 400) {
         const body = (await res.json()) as { errors?: WaitlistErrors };
@@ -173,8 +173,9 @@ export function WaitlistForm() {
 
       {/* Honeypot for bots. Hidden from people and assistive tech. */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
-        <label htmlFor="company">Company</label>
-        <input id="company" name="company" type="text" tabIndex={-1} autoComplete="off" />
+        {/* Named so browsers never recognize it as an address or company field to auto-fill. */}
+        <label htmlFor="ff_check">Leave this field empty</label>
+        <input id="ff_check" name="ff_check" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
       {status === "error" ? (
