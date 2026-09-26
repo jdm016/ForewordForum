@@ -72,7 +72,7 @@ export const about = {
       blocks: [
         {
           type: "p",
-          text: "Jessica D. Maine-Jackson, who works professionally as Jessica D. Maine, founded Foreword Forum in Dallas. Programs run in person in Dallas and live online, so students outside North Texas can take part.",
+          text: "Jessica D. Maine-Jackson founded Foreword Forum in Dallas. Students join in person in Dallas or live online from anywhere in the country.",
         },
         {
           type: "p",
