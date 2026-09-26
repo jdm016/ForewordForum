@@ -41,7 +41,7 @@ export const founder = {
 /** Home page section that introduces the founder and her record. */
 export const founderHome = {
   label: "Who runs it",
-  heading: "Corporate leader turned educator.",
+  heading: "Educator & Strategic Leader",
   body: [
     "Jessica D. Maine-Jackson began in corporate leadership, then moved into the classroom. Over 14 years in public education she grew into campus and district leadership and served as an educational consultant to Dallas ISD. From there she turned to entrepreneurship, for the chance to make a more significant impact.",
     "Foreword Forum brings all of that experience together into the resource she saw young people needed: real access to the knowledge, guidance, and support that turn a plan into a next step.",
