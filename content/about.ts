@@ -12,9 +12,9 @@
 export const founder = {
   name: "Jessica D. Maine-Jackson",
   role: "Founder",
-  // TODO: add a professional headshot at /public/photos/jessica-maine-jackson.jpg and set this to
-  // "/photos/jessica-maine-jackson.jpg". It appears on the home page and the About page.
-  photo: null as string | null,
+  // Headshot shown on the home page and the About page. To replace it, save a new
+  // file over /public/photos/jessica-maine-jackson.jpg (portrait, about 960 x 1310).
+  photo: "/photos/jessica-maine-jackson.jpg" as string | null,
   photoAlt: "Jessica D. Maine-Jackson, founder of Foreword Forum",
   stats: [
     { figure: "100%", label: "of participating students graduated and were accepted to college" },

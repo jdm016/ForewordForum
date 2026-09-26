@@ -92,8 +92,8 @@ export default function AboutPage() {
                       <img
                         src={founder.photo}
                         alt={founder.photoAlt}
-                        width={480}
-                        height={600}
+                        width={960}
+                        height={1311}
                         className="mb-8 w-full rounded border border-patina object-cover"
                       />
                     ) : null}

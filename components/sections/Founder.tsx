@@ -16,8 +16,8 @@ export function Founder() {
             <img
               src={founder.photo}
               alt={founder.photoAlt}
-              width={480}
-              height={600}
+              width={960}
+              height={1311}
               className="mt-8 w-full max-w-xs rounded border border-patina object-cover"
             />
           ) : null}
