@@ -86,7 +86,7 @@ export default function StyleguidePage() {
               ["Header · Playfair 600 · 44/32", <Header key="h" as="p">Write your next chapter.</Header>],
               ["Heading · Playfair 600 · 36/28", <Heading key="h2" as="p">How it works</Heading>],
               ["Pull quote · Playfair italic · 30/24", <PullQuote key="q">They are not lecturing at you. They are writing alongside you.</PullQuote>],
-              ["Subtitle · Playfair italic · 24/20", <Subtitle key="s">College and career readiness for students ages 16 to 26.</Subtitle>],
+              ["Subtitle · Playfair italic · 24/20", <Subtitle key="s">College and career readiness for teens and young adults.</Subtitle>],
               ["Subheading · Inter 600 · 22/19", <Subheading key="h3" as="p">Meet your Co-Author</Subheading>],
               [
                 "Body · Inter 400 · 18/16 · 1.65",

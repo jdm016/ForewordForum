@@ -1,6 +1,6 @@
 # Foreword Forum website
 
-Marketing site for Foreword Forum, a Dallas-based college and career readiness program for students ages 16 to 26. Its main job is collecting waitlist signups for Volume I, which begins October 15, 2026. Foreword Forum officially launches October 1, 2026.
+Marketing site for Foreword Forum, a Dallas-based college and career readiness program for teens and young adults. Its main job is collecting waitlist signups for Volume I, which begins October 15, 2026. Foreword Forum officially launches October 1, 2026.
 
 Built with Next.js (App Router), TypeScript and Tailwind CSS.
 

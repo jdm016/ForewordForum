@@ -10,10 +10,10 @@ export const hero = {
   label: "Volume I begins October 15, 2026",
   // The word in `swipe` gets the coral highlighter.
   title: { before: "Your ", swipe: "story", after: " starts here." },
-  subhead: "College and career readiness for students ages 16 to 26, in Dallas and live online nationwide.",
+  subhead: "College and career readiness for teens and young adults, in Dallas and live online nationwide.",
   primary: { label: "Write your next chapter", href: "#waitlist" },
   secondary: { label: "See how it works", href: "#how-it-works" },
-  notes: ["Ages 16 to 26", "In person in Dallas", "Live online nationwide"],
+  notes: ["Teens and young adults", "In person in Dallas", "Live online nationwide"],
 };
 
 export const whatWeDo = {
@@ -36,7 +36,7 @@ export const programs = {
       name: "Speak Volumes",
       kind: "Empowerment track",
       icon: "chats",
-      body: "Our empowerment track for ages 16 to 26. Confidence, communication, and the skills that do not appear on a transcript but decide everything.",
+      body: "Our empowerment track for teens and young adults. Confidence, communication, and the skills that do not appear on a transcript but decide everything.",
     },
   ],
 } as const;

@@ -11,7 +11,7 @@ export const site = {
   email: "hello@forewordforum.com",
   title: "Foreword Forum | College and career readiness in Dallas and online",
   description:
-    "College and career readiness for students ages 16 to 26, in Dallas and live online nationwide. Join the waitlist for Volume I, beginning October 15, 2026.",
+    "College and career readiness for teens and young adults, in Dallas and live online nationwide. Join the waitlist for Volume I, beginning October 15, 2026.",
   location: { city: "Dallas", region: "TX", country: "US" },
 };
 
