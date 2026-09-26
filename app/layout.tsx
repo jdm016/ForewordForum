@@ -60,7 +60,7 @@ const jsonLd = {
   founder: {
     "@type": "Person",
     name: founder.name,
-    jobTitle: founder.role,
+    jobTitle: `${founder.role}, ${founder.title}`,
     alumniOf: { "@type": "CollegeOrUniversity", name: "Sam Houston State University" },
   },
   areaServed: [

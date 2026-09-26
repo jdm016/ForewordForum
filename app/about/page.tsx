@@ -94,9 +94,11 @@ export default function AboutPage() {
                         alt={founder.photoAlt}
                         width={960}
                         height={1311}
-                        className="mb-8 w-full rounded border border-patina object-cover"
+                        className="mb-4 w-full rounded border border-patina object-cover"
                       />
                     ) : null}
+                    <p className="type-h3">{founder.name}</p>
+                    <p className="type-label mb-8 mt-1">{founder.title}</p>
                     <p className="type-label mb-4">At a glance</p>
                     <ul className="grid gap-3">
                       {founder.credentials.map((c) => (

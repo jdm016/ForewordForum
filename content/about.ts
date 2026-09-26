@@ -12,6 +12,7 @@
 export const founder = {
   name: "Jessica D. Maine-Jackson",
   role: "Founder",
+  title: "Educator & Strategic Leader",
   // Headshot shown on the home page and the About page. To replace it, save a new
   // file over /public/photos/jessica-maine-jackson.jpg (portrait, about 960 x 1310).
   photo: "/photos/jessica-maine-jackson.jpg" as string | null,
